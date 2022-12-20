@@ -6,11 +6,7 @@ import { Mem } from "./components/Mem";
 import { Vote } from "./components/Vote";
 
 function App() {
-  // const [count, setCount] = useState(0);
 
-  // const dodawanieWartosci = () => {
-  //   setCount( count + 1);
-  // }
 
   return (
     <div className="App">

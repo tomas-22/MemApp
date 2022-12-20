@@ -4,16 +4,15 @@ import { Mem } from "../components/Mem"
 
 
 
-export const Regular = () => {
+export const Regular = (props) => {
+  function createMem(memItem) {
+    return <Mem key={memItem.id} id={memItem.id} title={memItem.title} upvotes={memItem.upvotes} downvotes={memItem.downvotes} img={memItem.img} setUpvote={props.setUpvote} setDownvote={props.setDownvote}/>
+  } 
 
-  // function createMem(memItem) {
-  //   return <Mem key={memItem.id} title={memItem.title} img={memItem.img} upvote={memItem.upvote}/>
-  // } 
-
+  
     return <div>
-        Regular: 
-        {memy.map((memItem) => {
-          return <Mem key={memItem.id} title={memItem.title} img={memItem.img} upvote={memItem.upvote}/>
-        })}
+        Regular:
+
+      {props.mems.filter(mem => (mem.upvotes - mem.downvotes) <= 5 ).map(createMem)}
     </div>
 }

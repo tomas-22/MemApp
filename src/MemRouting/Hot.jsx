@@ -5,28 +5,15 @@ import { Vote } from "../components/Vote"
 
   
 
-export const Hot = () => {
+export const Hot = (props) => {
 function createMem(memItem) {
-    return <Mem key={memItem.id} title={memItem.title} upvotes={memItem.upvotes} img={memItem.img} />
+    return <Mem key={memItem.id} id={memItem.id} title={memItem.title} upvotes={memItem.upvotes} downvotes={memItem.downvotes} img={memItem.img} setUpvote={props.setUpvote} setDownvote={props.setDownvote}/>
   } 
 
-  const memList = () => {
-    return memy.map(createMem)
-  }
-
-
-    const [displayedMems, setDisplayedMems] = useState(memList);
-
-    const hideMem = (upvote) => {
-      const upDatedMem = displayedMems.filter(upvote => upvote < 5 );
-      return setDisplayedMems(upDatedMem);
-    }
+  
     return <div>
         Hot:
 
-        {displayedMems.map((mem) => {
-          return <Mem ukryj={hideMem}/>
-        })}
-    
+      {props.mems.filter(mem => (mem.upvotes - mem.downvotes) > 5 ).map(createMem)}
     </div>
 }

@@ -2,8 +2,8 @@ const memy = [
   {
     id: 1,
     title: "Mem 1",
-    upvotes: "6",
-    downvotes: "0",
+    upvotes: 6,
+    downvotes: 0,
     img: "https://i1.kwejk.pl/k/obrazki/2022/12/QKjjbrsPHDo3KBPn.jpg?fbclid=IwAR05GBk1VvZ-HojR16aXjQd4ZQh6EnKHqJQweD7Ya4w5vBv4ao3oG5s8l58",
   },
   {

@@ -3,11 +3,19 @@ import { Vote } from "./Vote"
 
 export const Mem = (props) => {
     return <div>
-        <h1>{props.title}</h1>
+        <h1>{props.title} {props.id}</h1>
         <h2>{props.upvotes}</h2>
         <p>{props.downvotes}</p>
         <p><Photo img={props.img}/></p>
-        <p><Vote /></p>
+        <div>
+        GŁOSUJ :
+        <p>Liczba głosów na tak {props.upvotes}
+        <button onClick={ () => props.setUpvote(props.id)}>👍</button></p>
+        
+        Liczba głosów na nie {props.downvotes}
+        <button onClick={ () => props.setDownvote(props.id) }>👎</button>
+
+    </div>
         
     </div>
 }
