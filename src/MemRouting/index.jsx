@@ -1,6 +1,7 @@
 import { NavLink, Routes, Route } from "react-router-dom"
 import { Hot } from "./Hot"
 import { Regular } from "./Regular"
+import { AddMem } from "./AddMem"
 import memSource from "../memy"
 import { useState } from "react"
 
@@ -40,10 +41,12 @@ export const MemRouting = () => {
         <div>
             <NavLink to="/hot">HOT</NavLink>
             <p><NavLink to="/regular">REGULAR</NavLink></p>
+            <NavLink to="/addMem">Add your Mem</NavLink>
         </div>
         <Routes>
             <Route path="/hot" element={<Hot mems={mems} setUpvote={setUpvote} setDownvote={setDownvote}/>} />
             <Route path="/regular" element={< Regular mems={mems} setUpvote={setUpvote} setDownvote={setDownvote}/>} />
+            <Route path="/addMem" element={<AddMem />} />
         </Routes>
     </div>
 }
