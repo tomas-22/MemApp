@@ -4,9 +4,26 @@ import { Regular } from "./Regular";
 import { AddMem } from "./AddMem";
 import memSource from "../memy";
 import { useState } from "react";
+import "../index.css";
+import styles from "./index.module.css";
 
 export const MemRouting = () => {
   const [mems, setMems] = useState(memSource);
+  // const [isDone, setIsDone] = useState(false);
+
+  // function handleClick() {
+  //   setIsDone((prevValue) => {
+  //     return !prevValue;
+  //   })
+  // }
+
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: isActive ? "underline" : "none",
+    };
+  };
+
   const setUpvote = (memId) => {
     setMems((currentMems) => {
       console.log(currentMems, memId);
@@ -39,12 +56,17 @@ export const MemRouting = () => {
 
   return (
     <div>
-      <div>
-        <NavLink to="/hot">HOT</NavLink>
-        <p>
-          <NavLink to="/regular">REGULAR</NavLink>
-        </p>
-        <NavLink to="/addMem">Add your Mem</NavLink>
+      <div className={styles.NabBar}>
+        <NavLink to="/hot" className={styles.NavLink} style={navLinkStyles}>
+          HOT
+        </NavLink>
+        <NavLink to="/regular" className={styles.NavLink} style={navLinkStyles}>
+          REGULAR
+        </NavLink>
+
+        <NavLink to="/addMem" className={styles.NavLink} style={navLinkStyles}>
+          ADD NEW MEM
+        </NavLink>
       </div>
       <Routes>
         <Route
@@ -63,7 +85,7 @@ export const MemRouting = () => {
             />
           }
         />
-        <Route path="/addMem" element={<AddMem mems={mems}/>} />
+        <Route path="/addMem" element={<AddMem mems={mems} />} />
       </Routes>
     </div>
   );

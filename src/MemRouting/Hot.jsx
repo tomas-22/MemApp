@@ -18,7 +18,6 @@ export const Hot = (props) => {
 
   return (
     <div>
-      Hot:
       {props.mems
         .filter((mem) => mem.upvotes - mem.downvotes > 5)
         .map(createMem)}

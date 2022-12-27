@@ -18,7 +18,7 @@ export const Regular = (props) => {
 
   return (
     <div>
-      Regular:
+      
       {props.mems
         .filter((mem) => mem.upvotes - mem.downvotes <= 5)
         .map(createMem)}

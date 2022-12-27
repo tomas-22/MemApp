@@ -1,0 +1,23 @@
+.NabBar {
+    height: 48px;
+    background-color: aliceblue;
+}
+
+.NavLink {
+    padding: 8px;
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+.inactive {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+
