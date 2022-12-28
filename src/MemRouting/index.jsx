@@ -9,13 +9,6 @@ import styles from "./index.module.css";
 
 export const MemRouting = () => {
   const [mems, setMems] = useState(memSource);
-  // const [isDone, setIsDone] = useState(false);
-
-  // function handleClick() {
-  //   setIsDone((prevValue) => {
-  //     return !prevValue;
-  //   })
-  // }
 
   const navLinkStyles = ({ isActive }) => {
     return {
@@ -26,7 +19,6 @@ export const MemRouting = () => {
 
   const setUpvote = (memId) => {
     setMems((currentMems) => {
-      console.log(currentMems, memId);
       return currentMems.map((mem) => {
         if (memId === mem.id) {
           return {
@@ -42,7 +34,6 @@ export const MemRouting = () => {
   const setDownvote = (memId) => {
     setMems(
       mems.map((mem) => {
-        console.log(memId);
         if (memId === mem.id) {
           return {
             ...mem,
