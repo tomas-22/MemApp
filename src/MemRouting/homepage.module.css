@@ -1,0 +1,14 @@
+.heading {
+  transform: rotate(3deg);
+  padding: 0.2rem 10rem;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: #46cdbb;
+  font-size: 5rem;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rem;
+}

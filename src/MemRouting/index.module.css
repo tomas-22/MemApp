@@ -12,12 +12,18 @@
 .active {
     font-weight: bold;
     text-decoration: underline;
+    padding: 8px;
+    margin: 0 20px;
+    font-size: 20px;
 }
 
 
 .inactive {
     font-weight: normal;
     text-decoration: none;
+    padding: 8px;
+    margin: 0 20px;
+    font-size: 20px;
 }
 
 

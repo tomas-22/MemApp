@@ -2,6 +2,7 @@ import { NavLink, Routes, Route } from "react-router-dom";
 import { Hot } from "./Hot";
 import { Regular } from "./Regular";
 import { AddMem } from "./AddMem";
+import { HomePage } from "./HomePage";
 import memSource from "../memy";
 import { useState } from "react";
 import "../index.css";
@@ -9,13 +10,6 @@ import styles from "./index.module.css";
 
 export const MemRouting = () => {
   const [mems, setMems] = useState(memSource);
-
-  const navLinkStyles = ({ isActive }) => {
-    return {
-      fontWeight: isActive ? "bold" : "normal",
-      textDecoration: isActive ? "underline" : "none",
-    };
-  };
 
   const setUpvote = (memId) => {
     setMems((currentMems) => {
@@ -48,18 +42,34 @@ export const MemRouting = () => {
   return (
     <div>
       <div className={styles.NabBar}>
-        <NavLink to="/hot" className={styles.NavLink} style={navLinkStyles}>
+        <NavLink
+          to="/hot"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.inactive
+          }
+        >
           HOT
         </NavLink>
-        <NavLink to="/regular" className={styles.NavLink} style={navLinkStyles}>
+        <NavLink
+          to="/regular"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.inactive
+          }
+        >
           REGULAR
         </NavLink>
 
-        <NavLink to="/addMem" className={styles.NavLink} style={navLinkStyles}>
+        <NavLink
+          to="/addMem"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.inactive
+          }
+        >
           ADD NEW MEM
         </NavLink>
       </div>
       <Routes>
+        <Route path="/" element={<HomePage />}></Route>
         <Route
           path="/hot"
           element={
